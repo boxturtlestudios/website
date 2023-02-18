@@ -1,5 +1,208 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Raleway&display=swap');
+
+:root {
+    /* Color styles */
+    --primary--accent: #24815A;
+    --secondary--accent: #A9794C;
+    --primary--black: #18181C;
+    --primary--white: #EFEFEF;
+    --secondary--white: #999999;
+    --tertiary--white: #575758;
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Universal Styles */
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: var(--primary--black);
+    background-color: var(--primary--white);
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 100px;
+    line-height: 100px;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+}
+
+h4 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+p {
+    line-height: 1.4;
+}
+
+.primary-cta {
+    all: unset;
+    cursor: pointer;
+    color: var(--primary--white);
+    background-color: var(--primary--accent);
+    padding: 10px 25px;
+    border-radius: 27px;
+}
+
+/* Navbar */
+
+.navbar {
+    padding: 0 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+}
+
+.navbar .logo {
+    color: var(--primary--black);
+    height: 46px;
+}
+
+.navbar .wrapper {
+    display: flex;
+}
+
+.nav-links {
+    margin: 0 64px;
+    width: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-links li, .nav-links a{
+    all: unset;
+    color: var(--secondary--accent);
+    cursor: pointer;
+}
+
+.nav-links a:has(.material-symbols-outlined) {
+    display: flex;
+    align-items: center;
+}
+
+/* Hero */
+
+header.hero {
+    color: var(--primary--white);
+    height: calc(100vh - 64px);
+    min-height: 516px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("Assets/mycelia.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.featured {
+    max-width: 50%;
+    width: 516px;
+    position: absolute;
+    left: 8vw;
+    top: clamp(280px, 45%, 1000px);
+    transform: translateY(-45%)
+}
+
+.featured p {
+    margin: 28px 0px 38px 0px;
+}
+
+/* Main */
+
+main.construction {
+    text-align: center;
+    margin: auto;
+    padding: 180px 0;
+    width: 60%;
+}
+
+main.construction h2 {
+    margin-bottom: 30px;
+}
+
+
+/* Footer */
+
+footer {
+    background-color: var(--primary--black);
+    color: var(--primary--white);
+    padding: 48px 0 20px 0;
+}
+
+footer a {
+    all: unset;
+    cursor: pointer;
+}
+
+footer li {
+    list-style: none;
+}
+
+footer .wrapper {
+    display: flex;
+    justify-content: space-around;
+    width: 75%;
+    margin: auto;
+}
+
+footer .wrapper .logo {
+    position: relative;
+    right: 110px;
+}
+
+footer .wrapper .info .links .pages {
+    color: var(--secondary--white);
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    margin-top: 20px;
+}
+footer .wrapper .info .links .games {
+    color: var(--secondary--white);
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    margin-top: 8px;
+}
+
+footer .wrapper .info .socials {
+    display: flex;
+    display: flex;
+    justify-content: space-between;
+    width: 254px;
+    margin-top: 28px;
+}
+
+footer hr {
+    height: 2px;
+    background-color: var(--tertiary--white);
+    border: none;
+    width: 95%;
+    margin: 38px auto 18px auto;
+}
+
+footer .copyright {
+    margin-left: 4%;
+    color: var(--secondary--white);
+}
+
+@media only screen and (max-width: 889px) {
+    body {
+      background-color: lightblue;
+    }
+  }
