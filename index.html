@@ -13,11 +13,23 @@
 <body>
     <nav class="navbar">
         <div class="wrapper">
-            <img class="logo" src="Assets/logo.svg" alt="Box Turtle Logo">
+            <a href="index.html"><img class="logo" src="Assets/logo.svg" alt="Box Turtle Logo"></a>
             <ul class="nav-links">
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Games<span class="material-symbols-outlined">expand_more</span></a></li>
-                <li><a href="#">About<span class="material-symbols-outlined">expand_more</span></a></li>
+                <div class="dropdown">
+                    <li class=".dropbtn">Games<span class="material-symbols-outlined">expand_more</span></li>
+                    <div class="dropdown-content" id="gamesDropdown">
+                        <a href="#">Mycelia</a>
+                    </div>
+                </div>
+                <li><a href="#">About</a></li>
+                <!--<div class="dropdown">
+                    <li class=".dropbtn">About<span class="material-symbols-outlined">expand_more</span></li>
+                    <div class="dropdown-content" id="aboutDropdown">
+                        <a href="#">About Us</a>
+                        <a href="#">Our Team</a>
+                    </div>
+                </div>-->
                 <li><a href="#">Contact</a></li>
             </ul>
         </div>
@@ -28,12 +40,7 @@
             <h4 class="tag">In Development</h4>
             <h1 class="title">Mycelia</h1>
             <p class="details">
-            Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Ut et massa mi. Aliquam in
-            hendrerit urna. Pellentesque sit amet sapien
-            fringilla, mattis ligula consectetur, ultrices mauris.
-            Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Ut et massa mi.
+                A small farming farm set on the island of Mycelia. Explore the island and uncover the secrets of agriculture. Cultivate the unique environment and expand your farm to the undiscovered parts of the island. Sell your crops and goods at the seaside market to make a profit.
             </p>
             <a href="#" class="primary-cta">Learn More</a>
         </div>
@@ -42,10 +49,7 @@
     <main class="construction">
         <h2>Under Construction</h2>
         <p>
-            Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Ut et massa mi. Aliquam in
-            hendrerit urna. Pellentesque sit amet sapien
-            fringilla, mattis ligula consectetur, ultrices mauris.
+            This site is currently under construction. Check back soon!
         </p>
     </main>
     <footer>
@@ -54,7 +58,7 @@
                 <img src="/Assets/text-logo.svg" class="logo">
                 <nav class="links">
                     <ul class="pages">
-                        <li><a href="#">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="#">About</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
@@ -63,14 +67,31 @@
                     </ul>
                 </nav>
                 <div class="socials">
-                    <a href="#"><img src="Assets/Icons/youtube.svg" alt="Youtube Logo"></a>
-                    <a href="#"></a><img src="Assets/Icons/instagram.svg" alt="Instagram Logo"></a>
-                    <a href="#"></a><img src="Assets/Icons/github.svg" alt="Github Logo"></a>
-                    <a href="#"></a><img src="Assets/Icons/reddit.svg" alt="Reddit Logo"></a>
+                    <a href="https://www.youtube.com"><img src="Assets/Icons/youtube.svg" alt="Youtube Logo"></a>
+                    <a href="https://www.instagram.com"><img src="Assets/Icons/instagram.svg" alt="Instagram Logo"></a>
+                    <a href="https://www.github.com"><img src="Assets/Icons/github.svg" alt="Github Logo"></a>
+                    <a href="https://www.reddit.com"><img src="Assets/Icons/reddit.svg" alt="Reddit Logo"></a>
                 </div>
             </div>
             <div class="signup">
-                <img src="form.png" alt="temp form image">
+                <p>Get the latest updates on development and releases.</p>
+                <form name="main-signup" method="POST" onSubmit="submit" action="" data-netlify="true" data-netlify-honeypot="bot-field">
+                    <input style="display: none;" name="bot-field" type="text">
+                    <div>
+                        <label for="first-name">First Name</label>
+                        <input name="first-name" type="text" id="first-name" placeholder="First Name" required>
+                    </div>
+                    <div>
+                        <label for="last-name">Last Name</label>
+                        <input name="last-name" type="text" id="last-name" placeholder="Last Name" required>
+                    </div>
+                    <div class="email">
+                        <label for="email">Email Address</label>
+                        <input name="email" type="email" id="email" placeholder="yourname@email.com" required>
+                    </div>
+                    <p id="form-success">Success!<br>Thanks for signing up!</p>
+                    <button type="submit">Sign Up</button>
+                </form>
             </div>
         </div>
         <hr>
