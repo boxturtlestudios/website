@@ -18,14 +18,16 @@
             <a href="index.html"><img class="logo" src="Assets/logo.svg" alt="Box Turtle Logo"></a>
             <ul class="nav-links">
                 <li><a href="#">Home</a></li>
-                <div class="dropdown">
-                    <li class=".dropbtn">Games<span class="material-symbols-outlined">expand_more</span></li>
+                <li class="dropdown">
+                    <p class=".dropbtn">Games<span class="material-symbols-outlined">expand_more</span></p>
                     <div class="dropdown-content" id="gamesDropdown">
                         <a href="#">Mycelia</a>
                     </div>
-                </div>
+                </li>
                 <li><a href="#">About</a></li>
-                <!--<div class="dropdown">
+                <!--
+                    -------THIS IS WRONG--------
+                    <div class="dropdown">
                     <li class=".dropbtn">About<span class="material-symbols-outlined">expand_more</span></li>
                     <div class="dropdown-content" id="aboutDropdown">
                         <a href="#">About Us</a>
@@ -36,6 +38,11 @@
             </ul>
         </div>
         <a href="#" class="primary-cta">Explore</a>
+        <div class="burger toggle-burger" onclick="navSlide()">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
     </nav>
     <header class="hero">
         <div class="featured">
@@ -99,5 +106,6 @@
         <hr>
         <p class="copyright">©2023 Box Turtle Studios,  All Rights Reserved.</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
