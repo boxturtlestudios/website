@@ -20,6 +20,7 @@
     box-sizing: border-box;
 }
 
+
 /* Universal Styles */
 
 body.fourofour {
@@ -132,12 +133,12 @@ p {
     /*background-color: #e7e6e6*/
 }
 
-.nav-links .dropdown:hover li span {
+.nav-links .dropdown:hover span {
     transform: rotateZ(180deg);
     transition: transform 148ms linear;
 }
 
-.nav-links .dropdown li span {
+.nav-links .dropdown span {
     /*animation-name: rotate;
     animation-duration: 148ms;*/
     transform: rotateZ(0deg);
@@ -182,7 +183,7 @@ p {
         background-color: rgb(218, 216, 216);
     }
     
-    .navbar:hover .dropdown:hover .dropdown-content {
+    .navbar .dropdown:hover .dropdown-content {
         display: block;
     }
 
@@ -380,8 +381,22 @@ footer form button {
 
 @media only screen and (max-width: 889px) {
 
-    body {
+    body, html {
         overflow-x: hidden;
+    }
+
+    h1 {
+        font-size: 74px;
+    }
+
+    h2 {
+        font-size: 38px;
+    }
+
+    /* Navbar */
+
+    .navbar {
+        padding: 0 40px;
     }
 
     .burger {
@@ -418,8 +433,14 @@ footer form button {
         transition: transform 0.3s ease;
       }
     
+    .navbar.nav-active .burger {
+        position: fixed;
+        right: 40px;
+    }
+
     .nav-links.nav-active {
         transform: translateX(0%);
+        position: fixed;
       }
 
       @keyframes navLinkFade {
@@ -460,6 +481,59 @@ footer form button {
     .navbar.nav-active .burger .line3
     {
         transform: rotate(45deg) translate(-3px, -9.5px);
+    }
+
+    /* Hero */
+
+    header.hero {
+        text-align: center;
+    }
+    
+    .featured {
+        margin: auto;
+        padding-top: 14vh;
+        max-width: unset;
+        position: static;
+        width: 80%;
+        transform: unset;
+    }
+    
+    .featured p {
+        width: 94%;
+        margin: auto;
+        margin: 22px 0px 38px 0px;
+    }
+
+    /* Footer */
+
+    footer .wrapper {
+        flex-direction: column-reverse;
+        gap: 48px;
+        align-items: center;
+    }
+
+    footer .info {
+        width: 90%;
+        text-align: center;
+        margin: auto;
+    }
+
+    footer .signup {
+        max-width: 90%;
+    }
+
+    footer .logo {
+        position: static;
+    }
+
+    footer .pages, footer .games, footer .socials {
+        margin: auto;
+    }
+
+    #copyright {
+        margin: auto;
+        text-align: center;
+        width: 60%;
     }
 
   }
