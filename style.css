@@ -95,6 +95,7 @@ p {
 .navbar .logo {
     color: var(--primary--black);
     height: 46px;
+    cursor: pointer;
 }
 
 .navbar .wrapper {
@@ -381,8 +382,9 @@ footer form button {
 
 @media only screen and (max-width: 889px) {
 
-    body, html {
+    body {
         overflow-x: hidden;
+        width: 100vw;
     }
 
     h1 {
