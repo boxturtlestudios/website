@@ -3,6 +3,20 @@ body.fourofour {
     text-align: center;
 }
 
-.fourofour .primary-cta {
-    margin: 20px;
+.fourofour h1 {
+    font-size: 48px;
+}
+
+.fourofour a {
+    margin-top: 40px;
+}
+
+p a {
+    margin: 0 10px;
+}
+
+span.material-symbols-outlined {
+    position: relative;
+    top: 5px;
+    margin-left: 4px;
 }
