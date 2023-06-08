@@ -439,6 +439,7 @@ footer form button {
         flex-direction: column;
         z-index: 1;
         transform: translateX(100%);
+        display: none;
         transition: transform 0.2s ease-in;
     }
 
@@ -459,6 +460,7 @@ footer form button {
 
     .nav-links.nav-active {
         transform: translateX(0%);
+        display: inherit;
         position: fixed;
       }
 
