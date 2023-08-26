@@ -3,18 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Box Turtle Studios - Games</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="description" content="Browse Box Turtle Studio's collection of games.">
 
-    <link rel="stylesheet" href="Styles/main.css">
-    <link rel="stylesheet" href="Styles/404.css">
-    
-    <link rel="shortcut icon" href="Assets/favicon-logo.svg" type="image/x-icon">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@BoxTurtleStudio" />
+    <meta name="twitter:title" content="Box Turtle Studios" />
+    <meta name="twitter:description" content="Browse Box Turtle Studio's collection of games." />
+    <meta name="twitter:image" content="Assets\coverImage.png" />
 
+    <meta property="og:title" content="Box Turtle Studios | Games">
+    <meta property="og:site_name" content="Box Turtle Studios">
+    <meta property="og:url" content="https://boxturtlestudios.com">
+    <meta property="og:description" content="Browse Box Turtle Studio's collection of games.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/Assets/coverImage.png">
+
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/games.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,0" />
+
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+
+    <title>Box Turtle Studios | Games</title>
 </head>
-<body class="fourofour">
-    <h1>Coming Soon!</h1>
-    <h2>Page is Under Construction. Check back soon!</h2>
-    <a href="/" class="primary-cta">Return Home</a>
+<body>
+    <nav class="navbar">
+        <div class="wrapper">
+            <a href="/"><img class="logo" src="Assets/logo.svg" alt="Box Turtle Logo"></a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li class="dropdown">
+                    <p class="dropbtn"><a href="/games.html">Games</a><span class="material-symbols-outlined">expand_more</span></p>
+                    <div class="dropdown-content" id="gamesDropdown">
+                        <a href="https://mycelia.boxturtlestudios.com/">Mycelia</a>
+                    </div>
+                </li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <a href="/games.html" class="primary-cta">Explore</a>
+        <div class="burger toggle-burger" onclick="navSlide()">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    <header>
+        <h2>All Games</h2>
+        <!--<p>Browse our selection of games.</p>/-->
+    </header>
+    <section class="games-list" id="games-list">
+        <div class="game-card">
+            <img src="Assets/MyceliaBanner.png" alt="Mycelia">
+            <h3>Mycelia</h3>
+            <h4>Cozy farming-sim</h4>
+        </div>
+        <div class="game-card placeholder" id="base-placeholder">
+            <img src="Assets/ComingsoonImage.png">
+        </div>
+    </section>
+    <footer>
+        <div class="wrapper">
+            <div class="info">
+                <img src="/Assets/text-logo.svg" class="logo">
+                <nav class="links">
+                    <ul class="pages">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                    <ul class="games">
+                        <li><a href="https://mycelia.boxturtlestudios.com/">Mycelia</a></li>
+                    </ul>
+                </nav>
+                <div class="socials">
+                    <a href="https://www.youtube.com/@jacob_wigent"><img src="Assets/Icons/youtube.svg" alt="Youtube Logo"></a>
+                    <a href="https://discord.gg/nztYGYasMB"><img src="Assets/Icons/discord.svg" alt="Discord Logo"></a>
+                    <a href="https://twitter.com/BoxTurtleStudio"><img src="Assets/Icons/twitter.svg" alt="Github Logo"></a>
+                </div>
+            </div>
+            <div class="signup">
+                <p>Get the latest updates on development and releases.</p>
+                <form name="main-signup" method="POST" onSubmit="submit" action="" data-netlify="true" data-netlify-honeypot="bot-field">
+                    <input style="display: none;" name="bot-field" type="text">
+                    <div>
+                        <label for="first-name">First Name</label>
+                        <input name="first-name" type="text" id="first-name" placeholder="First Name" required>
+                    </div>
+                    <div>
+                        <label for="last-name">Last Name</label>
+                        <input name="last-name" type="text" id="last-name" placeholder="Last Name" required>
+                    </div>
+                    <div class="email">
+                        <label for="email">Email Address</label>
+                        <input name="email" type="email" id="email" placeholder="yourname@email.com" required>
+                    </div>
+                    <p id="form-success">Success!<br>Thanks for signing up!</p>
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright" id="copyright">©2023 Box Turtle Studios,  All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        const gridContainer = document.getElementById('games-list');
+        const cards = gridContainer.getElementsByClassName('game-card');
+        const placeholderCard = document.getElementById('base-placeholder');
+    
+        function updatePlaceholderCards() {
+            const cardsInRow = Math.floor(gridContainer.offsetWidth / cards[0].offsetWidth);
+            const missingCards = cardsInRow - (cards.length % cardsInRow);
+        
+            // Remove existing placeholder cards
+            const existingPlaceholders = gridContainer.getElementsByClassName('placeholder');
+            for (const placeholder of existingPlaceholders) {
+                gridContainer.removeChild(placeholder);
+            }
+        
+            // Add new placeholder cards
+            const cardsInLastRow = cards.length % cardsInRow;
+            for (let i = 0; i < (cardsInRow - cardsInLastRow) % cardsInRow; i++) {
+                gridContainer.appendChild(placeholderCard.cloneNode(true));
+            }
+        }
+    
+        // Update placeholder cards on load and window resize
+        updatePlaceholderCards();
+        window.addEventListener('resize', updatePlaceholderCards);
+    </script>
 </body>
 </html>
