@@ -75,4 +75,14 @@ header.hero {
         width: 80%;
         transform: unset;
     }
+
+    .featured img {
+        width: 90%;
+    }
+
+    .slider {
+        width: 100%;
+        margin: 12px auto;
+    }
+
 }
