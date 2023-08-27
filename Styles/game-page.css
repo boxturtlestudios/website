@@ -77,12 +77,19 @@ header.hero {
     }
 
     .featured img {
-        width: 90%;
+        all: unset;
+        width: 98%;
+        margin: auto;
+        transform: translateX(30px);
     }
 
     .slider {
         width: 100%;
-        margin: 12px auto;
+        margin: 18px auto;
+    }
+
+    section {
+        width: 100%;
     }
 
 }
