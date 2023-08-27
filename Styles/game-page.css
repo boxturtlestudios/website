@@ -5,10 +5,7 @@ header.hero {
     color: var(--primary--white);
     height: calc(100vh - 100px);
     min-height: 516px;
-    /*BACKGROUND IMAGE IN INLINE*/
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
 }
 
 .featured {
@@ -18,6 +15,17 @@ header.hero {
     left: 8vw;
     top: clamp(280px, 45%, 1000px);
     transform: translateY(-45%);
+}
+
+header.hero video {
+    width: 100%;
+    height: calc(100vh - 100px + 4px);
+    object-fit: cover;
+    position: absolute;
+    top: 64;
+    right: 0;
+    left: 0;
+    z-index: -1;
 }
 
 .featured .title {
@@ -37,7 +45,20 @@ header.hero {
 
 .featured .secondary-cta {
     padding: 14px 12%;
+    margin-right: 22px;
+    margin-bottom: 22px;
 }
+
+a .material-symbols-outlined {
+    position: relative;
+    top: 6px;
+    left: 2px;
+}
+
+.featured .secondary-cta:has(.material-symbols-outlined) {
+    padding-top: 6px;
+}
+
 
 /* Slider */
 .slider {
@@ -56,8 +77,71 @@ header.hero {
 .swiper .swiper-pagination-bullet-active {
     background-color: white;
 }
-  
 
+
+/* INFO SECTION */
+
+section.info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info .specs {
+    width: 40%;
+    padding: 28px 36px;
+}
+  
+.info .description {
+    width: 55%;
+    padding: 2px 16px;
+    padding-bottom: 100px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+tr {
+    border-top: 2px solid var(--primary--black);
+    border-bottom: 2px solid var(--primary--black);
+}
+td {
+    padding: 16px 12px;
+}
+
+tr td:first-child {
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;;
+    font-weight: 600;
+}
+
+.description h2 {
+    margin-bottom: 16px;
+}
+
+.description h3 {
+    margin-bottom: 8px;
+}
+.description p {
+    line-height: 1.5;
+}
+
+.instagram-media {
+    margin-top: 36px !important;
+    max-height: 500px;
+    max-width: 100% !important;
+}
+
+.specs .socials {
+    margin-top: 36px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.socials a::after {
+    all: unset;
+}
 
 @media only screen and (max-width: 889px) {
  
@@ -65,6 +149,10 @@ header.hero {
 
     header.hero {
         text-align: center;
+    }
+
+    header.hero video {
+        height: calc(100vh - 100px);
     }
 
     .featured {
@@ -83,13 +171,35 @@ header.hero {
         transform: translateX(30px);
     }
 
+    .featured .secondary-cta {
+        margin-bottom: 22px;
+        margin-right: 0;
+    }
+
     .slider {
         width: 100%;
         margin: 18px auto;
     }
 
-    section {
+    section.photos {
         width: 100%;
+    }
+
+    section.info {
+        flex-direction: column;
+    }
+
+    .info .specs {
+        width: 100%;
+        padding: 28px 36px;
+    }
+      
+    .info .description {
+        width: 100%;
+    }
+
+    .instagram-media {
+        display: none !important;
     }
 
 }

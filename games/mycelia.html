@@ -25,6 +25,7 @@
 
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
     <link rel="icon" type="image/png" href="/assets/favicon.png">
+    
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
 
@@ -53,14 +54,16 @@
             <div class="line3"></div>
         </div>
     </nav>
-    <header class="hero" style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url('../Assets/Games/Mycelia/growing.png')">
-        <div class="featured">
+    <header class="hero">
+        <video src="../Assets/Games/Mycelia/mycelia-preview.mp4" id= "fullscreenVideo" autoplay loop muted></video>
+        <div class="featured" >
             <h4 class="tag">Coming Soon!</h4>
             <img src="../Assets/myceliaTitle.png" alt="Mycelia" class="title">
             <a href="https://mycelia.boxturtlestudios.com/" class="secondary-cta" target="_blank">Visit Site</a>
+            <a class="secondary-cta" onclick="toggleFullscreen()">Watch Video <span class="material-symbols-outlined">arrow_forward</span></a>
         </div>
     </header>
-    <section>
+    <section class="photos">
         <div class="slider">
             <!-- Slider main container -->
             <div class="swiper">
@@ -83,6 +86,65 @@
             </div>
         </div>
     </section>
+    <section class="info">
+        <div class="specs">
+            <table>
+                <tr>
+                    <td>Genre:</td>
+                    <td>Farming-Sim</td>
+                </tr>
+                <tr>
+                    <td>Platforms:</td>
+                    <td>PC, Nintendo Switch</td>
+                </tr>
+                <tr>
+                    <td>Release Date:</td>
+                    <td>TBD</td>
+                </tr>
+            </table>
+
+            <div class="socials">
+                <a href="https://www.youtube.com/@jacob_wigent"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M47.5219 14.4001C47.5219 14.4001 47.0531 11.0907 45.6094 9.6376C43.7812 7.7251 41.7375 7.71572 40.8 7.60322C34.0875 7.11572 24.0094 7.11572 24.0094 7.11572H23.9906C23.9906 7.11572 13.9125 7.11572 7.2 7.60322C6.2625 7.71572 4.21875 7.7251 2.39062 9.6376C0.946875 11.0907 0.4875 14.4001 0.4875 14.4001C0.4875 14.4001 0 18.2907 0 22.172V25.8095C0 29.6907 0.478125 33.5813 0.478125 33.5813C0.478125 33.5813 0.946875 36.8907 2.38125 38.3438C4.20937 40.2563 6.60938 40.1907 7.67813 40.397C11.5219 40.7626 24 40.8751 24 40.8751C24 40.8751 34.0875 40.8563 40.8 40.3782C41.7375 40.2657 43.7812 40.2563 45.6094 38.3438C47.0531 36.8907 47.5219 33.5813 47.5219 33.5813C47.5219 33.5813 48 29.7001 48 25.8095V22.172C48 18.2907 47.5219 14.4001 47.5219 14.4001ZM19.0406 30.2251V16.7345L32.0062 23.5032L19.0406 30.2251Z" fill="#18181C"/>
+                    </svg></a>
+                <a href="https://www.instagram.com/mycelia_game/reels/"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_18_134)">
+                    <path d="M24 4.32187C30.4125 4.32187 31.1719 4.35 33.6938 4.4625C36.0375 4.56562 37.3031 4.95938 38.1469 5.2875C39.2625 5.71875 40.0688 6.24375 40.9031 7.07812C41.7469 7.92188 42.2625 8.71875 42.6938 9.83438C43.0219 10.6781 43.4156 11.9531 43.5188 14.2875C43.6313 16.8187 43.6594 17.5781 43.6594 23.9813C43.6594 30.3938 43.6313 31.1531 43.5188 33.675C43.4156 36.0188 43.0219 37.2844 42.6938 38.1281C42.2625 39.2438 41.7375 40.05 40.9031 40.8844C40.0594 41.7281 39.2625 42.2438 38.1469 42.675C37.3031 43.0031 36.0281 43.3969 33.6938 43.5C31.1625 43.6125 30.4031 43.6406 24 43.6406C17.5875 43.6406 16.8281 43.6125 14.3063 43.5C11.9625 43.3969 10.6969 43.0031 9.85313 42.675C8.7375 42.2438 7.93125 41.7188 7.09688 40.8844C6.25313 40.0406 5.7375 39.2438 5.30625 38.1281C4.97813 37.2844 4.58438 36.0094 4.48125 33.675C4.36875 31.1438 4.34063 30.3844 4.34063 23.9813C4.34063 17.5688 4.36875 16.8094 4.48125 14.2875C4.58438 11.9437 4.97813 10.6781 5.30625 9.83438C5.7375 8.71875 6.2625 7.9125 7.09688 7.07812C7.94063 6.23438 8.7375 5.71875 9.85313 5.2875C10.6969 4.95938 11.9719 4.56562 14.3063 4.4625C16.8281 4.35 17.5875 4.32187 24 4.32187ZM24 0C17.4844 0 16.6688 0.028125 14.1094 0.140625C11.5594 0.253125 9.80625 0.665625 8.2875 1.25625C6.70312 1.875 5.3625 2.69062 4.03125 4.03125C2.69063 5.3625 1.875 6.70313 1.25625 8.27813C0.665625 9.80625 0.253125 11.55 0.140625 14.1C0.028125 16.6687 0 17.4844 0 24C0 30.5156 0.028125 31.3312 0.140625 33.8906C0.253125 36.4406 0.665625 38.1938 1.25625 39.7125C1.875 41.2969 2.69063 42.6375 4.03125 43.9688C5.3625 45.3 6.70313 46.125 8.27813 46.7344C9.80625 47.325 11.55 47.7375 14.1 47.85C16.6594 47.9625 17.475 47.9906 23.9906 47.9906C30.5063 47.9906 31.3219 47.9625 33.8813 47.85C36.4313 47.7375 38.1844 47.325 39.7031 46.7344C41.2781 46.125 42.6188 45.3 43.95 43.9688C45.2812 42.6375 46.1063 41.2969 46.7156 39.7219C47.3063 38.1938 47.7188 36.45 47.8313 33.9C47.9438 31.3406 47.9719 30.525 47.9719 24.0094C47.9719 17.4938 47.9438 16.6781 47.8313 14.1188C47.7188 11.5688 47.3063 9.81563 46.7156 8.29688C46.125 6.70312 45.3094 5.3625 43.9688 4.03125C42.6375 2.7 41.2969 1.875 39.7219 1.26562C38.1938 0.675 36.45 0.2625 33.9 0.15C31.3313 0.028125 30.5156 0 24 0Z" fill="#18181C"/>
+                    <path d="M24 11.6719C17.1938 11.6719 11.6719 17.1938 11.6719 24C11.6719 30.8062 17.1938 36.3281 24 36.3281C30.8062 36.3281 36.3281 30.8062 36.3281 24C36.3281 17.1938 30.8062 11.6719 24 11.6719ZM24 31.9969C19.5844 31.9969 16.0031 28.4156 16.0031 24C16.0031 19.5844 19.5844 16.0031 24 16.0031C28.4156 16.0031 31.9969 19.5844 31.9969 24C31.9969 28.4156 28.4156 31.9969 24 31.9969Z" fill="#18181C"/>
+                    <path d="M39.6937 11.1843C39.6937 12.778 38.4 14.0624 36.8156 14.0624C35.2219 14.0624 33.9375 12.7687 33.9375 11.1843C33.9375 9.59053 35.2313 8.30615 36.8156 8.30615C38.4 8.30615 39.6937 9.5999 39.6937 11.1843Z" fill="#18181C"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_18_134">
+                    <rect width="48" height="48" fill="#18181C"/>
+                    </clipPath>
+                    </defs>
+                    </svg>
+                    </a>
+                <a href="https://www.tiktok.com/@mycelia_game"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M34.1451 0H26.0556V32.6956C26.0556 36.5913 22.9444 39.7913 19.0725 39.7913C15.2007 39.7913 12.0894 36.5913 12.0894 32.6956C12.0894 28.8696 15.1315 25.7391 18.8651 25.6V17.3913C10.6374 17.5304 4 24.2783 4 32.6956C4 41.1827 10.7757 48 19.1417 48C27.5075 48 34.2833 41.1131 34.2833 32.6956V15.9304C37.3255 18.1565 41.059 19.4783 45 19.5479V11.3391C38.9157 11.1304 34.1451 6.12173 34.1451 0Z" fill="#18181C"/>
+                    </svg>
+                    </a>
+                <a href="https://discord.gg/nztYGYasMB"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M40.634 8.31127C37.5747 6.90751 34.294 5.87327 30.8638 5.28093C30.8013 5.2695 30.7389 5.29806 30.7067 5.3552C30.2848 6.10563 29.8175 7.08463 29.4902 7.85412C25.8008 7.30178 22.1304 7.30178 18.5166 7.85412C18.1893 7.06753 17.705 6.10563 17.2811 5.3552C17.249 5.29997 17.1866 5.2714 17.1241 5.28093C13.6958 5.87138 10.4151 6.90561 7.35387 8.31127C7.32737 8.32269 7.30465 8.34176 7.28958 8.3665C1.06678 17.6632 -0.6379 26.7314 0.19836 35.6872C0.202144 35.731 0.22674 35.7729 0.260796 35.7996C4.36642 38.8147 8.34341 40.6451 12.2466 41.8583C12.309 41.8774 12.3752 41.8546 12.415 41.8031C13.3383 40.5423 14.1613 39.2128 14.867 37.8147C14.9086 37.7328 14.8688 37.6357 14.7837 37.6033C13.4783 37.1081 12.2352 36.5043 11.0395 35.8187C10.9449 35.7634 10.9373 35.6281 11.0243 35.5634C11.2759 35.3748 11.5276 35.1786 11.7679 34.9805C11.8114 34.9444 11.872 34.9367 11.9231 34.9596C19.7786 38.5461 28.2831 38.5461 36.0459 34.9596C36.097 34.9348 36.1576 34.9425 36.203 34.9787C36.4433 35.1767 36.6949 35.3748 36.9484 35.5634C37.0354 35.6281 37.0298 35.7634 36.9352 35.8187C35.7394 36.5176 34.4964 37.1081 33.189 37.6014C33.1039 37.6338 33.0661 37.7328 33.1077 37.8147C33.8285 39.2108 34.6515 40.5403 35.5578 41.8012C35.5956 41.8546 35.6637 41.8774 35.7262 41.8583C39.6483 40.6451 43.6252 38.8147 47.7309 35.7996C47.7668 35.7729 47.7895 35.7329 47.7933 35.6891C48.7942 25.3352 46.117 16.3414 40.6964 8.3684C40.6832 8.34176 40.6605 8.32269 40.634 8.31127ZM16.04 30.2341C13.675 30.2341 11.7263 28.0628 11.7263 25.3962C11.7263 22.7297 13.6372 20.5584 16.04 20.5584C18.4617 20.5584 20.3916 22.7487 20.3538 25.3962C20.3538 28.0628 18.4428 30.2341 16.04 30.2341ZM31.9895 30.2341C29.6245 30.2341 27.6758 28.0628 27.6758 25.3962C27.6758 22.7297 29.5867 20.5584 31.9895 20.5584C34.4113 20.5584 36.3411 22.7487 36.3033 25.3962C36.3033 28.0628 34.4113 30.2341 31.9895 30.2341Z" fill="#18181C"/>
+                    </svg></a>
+            </div>
+
+            <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/CupojHRvIeo/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/CupojHRvIeo/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/CupojHRvIeo/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Mycelia (@mycelia_game)</a></p></div></blockquote> <script async src="//www.instagram.com/embed.js"></script>
+        </div>
+        <div class="description">
+            <h2>Mycelia</h2>
+            <p>A farming game set on the island of Mycelia. Explore the island and uncover the secrets of agriculture. Cultivate the unique environment and expand your farm to the undiscovered parts of the island. Sell your crops and goods at the seaside market to make a profit.</p>
+            <br><br>
+            <h3>Explore</h3>
+            <p>Step into the enchanting world of Mycelia, a whimsical pixel-art farming game that invites you to embark on a journey of discovery. As you arrive on the island of Mycelia, you'll be greeted by its lush landscapes, mysterious forests, and hidden nooks. Delve into the lore and history of Mycelia to uncover the forgotten practices that will aid you in your farming endeavors.</p>
+            <br><br>
+            <h3>Cultivate</h3>
+            <p>Embrace the role of a budding farmer as you dive into the heart of Mycelia's agricultural essence. Learn to adapt to the island's ever-changing weather patterns and cultivate a variety of crops that thrive in Mycelia's unique ecosystems. Discover rare seeds that, when cared for with precision and love, result in extraordinary plants with mystical properties. As you tend to your fields, you'll unlock the secrets of crop rotation, soil enrichment, and the delicate balance between nature and cultivation.</p>
+            <br><br>
+            <h3>Expand</h3>
+            <p>As your farming expertise grows, so too does your domain. Gradually unlock the ability to extend your farm's borders beyond its initial boundaries. Traverse into uncharted territories, each with its own challenges and opportunities. Clear overgrown paths, construct bridges over bubbling streams, and restore crumbling structures to create new spaces for cultivation. Establish outposts on the outer islands, allowing you to diversify your farming operations and take advantage of unique microclimates.</p>
+        </div>
+    </section>s
     <footer>
         <div class="wrapper">
             <div class="info">
@@ -152,5 +214,6 @@
         },
         });
     </script>
+    <script src="../Scripts/game-page.js"></script>
 </body>
 </html>
