@@ -4,34 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-    <meta name="description" content="Browse Box Turtle Studio's collection of games.">
+    <meta name="description" content="A farming game set on the island of Mycelia. Explore the island and uncover the secrets of agriculture.">
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@BoxTurtleStudio" />
     <meta name="twitter:title" content="Box Turtle Studios" />
-    <meta name="twitter:description" content="Browse Box Turtle Studio's collection of games." />
-    <meta name="twitter:image" content="Assets\coverImage.png" />
+    <meta name="twitter:description" content="A farming game set on the island of Mycelia. Explore the island and uncover the secrets of agriculture." />
+    <meta name="twitter:image" content="..\Assets\MyceliaBanner.png" />
 
-    <meta property="og:title" content="Box Turtle Studios | All Games">
+    <meta property="og:title" content="Box Turtle Studios | Mycelia">
     <meta property="og:site_name" content="Box Turtle Studios">
     <meta property="og:url" content="https://boxturtlestudios.com">
-    <meta property="og:description" content="Browse Box Turtle Studio's collection of games.">
+    <meta property="og:description" content="A farming game set on the island of Mycelia. Explore the island and uncover the secrets of agriculture.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="/Assets/coverImage.png">
+    <meta property="og:image" content="..\Assets\MyceliaBanner.png">
 
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/games.css">
+    <link rel="stylesheet" href="../Styles/main.css">
+    <link rel="stylesheet" href="../Styles/game-page.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,0" />
 
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
     <link rel="icon" type="image/png" href="/assets/favicon.png">
 
-    <title>Box Turtle Studios | All Games</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+
+    <title>Box Turtle Studios | Mycelia</title>
 </head>
 <body>
     <nav class="navbar">
         <div class="wrapper">
-            <a href="/"><img class="logo" src="Assets/logo.svg" alt="Box Turtle Logo"></a>
+            <a href="/"><img class="logo" src="../Assets/logo.svg" alt="Box Turtle Logo"></a>
             <ul class="nav-links">
                 <li><a href="/">Home</a></li>
                 <li class="dropdown">
@@ -51,18 +53,34 @@
             <div class="line3"></div>
         </div>
     </nav>
-    <header>
-        <h2>All Games</h2>
-        <!--<p>Browse our selection of games.</p>/-->
+    <header class="hero" style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url('../Assets/Games/Mycelia/growing.png')">
+        <div class="featured">
+            <h4 class="tag">Coming Soon!</h4>
+            <img src="../Assets/myceliaTitle.png" alt="Mycelia" class="title">
+            <a href="https://mycelia.boxturtlestudios.com/" class="secondary-cta" target="_blank">Visit Site</a>
+        </div>
     </header>
-    <section class="games-list" id="games-list">
-        <div class="game-card"><a href="games/mycelia.html">
-            <img src="Assets/MyceliaBanner.png" alt="Mycelia">
-            <h3>Mycelia</h3>
-            <h4>Cozy farming-sim</h4>
-        </a></div>
-        <div class="game-card placeholder" id="base-placeholder">
-            <img src="Assets/ComingsoonImage.png">
+    <section>
+        <div class="slider">
+            <!-- Slider main container -->
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide"><img src="../Assets/Games/Mycelia/growing.png" alt="Crops growing in rain"></div>
+                <div class="swiper-slide"><img src="../Assets/Games/Mycelia/crops.png" alt="Crops being harvested"></div>
+                <div class="swiper-slide"><img src="../Assets/Games/Mycelia/house.png" alt="Aesthetic cottage"></div>
+                <div class="swiper-slide"><img src="../Assets/Games/Mycelia/inventory.png" alt="Player inventory"></div>
+                <div class="swiper-slide"><img src="../Assets/Games/Mycelia/book.png" alt="Player inventory with almanack"></div>
+
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+            
+                <!-- If we need navigation buttons
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>-->
+            </div>
         </div>
     </section>
     <footer>
@@ -80,9 +98,9 @@
                     </ul>
                 </nav>
                 <div class="socials">
-                    <a href="https://www.youtube.com/@jacob_wigent"><img src="Assets/Icons/youtube.svg" alt="Youtube Logo"></a>
-                    <a href="https://discord.gg/nztYGYasMB"><img src="Assets/Icons/discord.svg" alt="Discord Logo"></a>
-                    <a href="https://twitter.com/BoxTurtleStudio"><img src="Assets/Icons/twitter.svg" alt="Github Logo"></a>
+                    <a href="https://www.youtube.com/@jacob_wigent"><img src="../Assets/Icons/youtube.svg" alt="Youtube Logo"></a>
+                    <a href="https://discord.gg/nztYGYasMB"><img src="../Assets/Icons/discord.svg" alt="Discord Logo"></a>
+                    <a href="https://twitter.com/BoxTurtleStudio"><img src="../Assets/Icons/twitter.svg" alt="Github Logo"></a>
                 </div>
             </div>
             <div class="signup">
@@ -110,31 +128,29 @@
         <p class="copyright" id="copyright">©2023 Box Turtle Studios,  All Rights Reserved.</p>
     </footer>
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
-        const gridContainer = document.getElementById('games-list');
-        const cards = gridContainer.getElementsByClassName('game-card');
-        const placeholderCard = document.getElementById('base-placeholder');
-    
-        function updatePlaceholderCards() {
-            const cardsInRow = Math.floor(gridContainer.offsetWidth / cards[0].offsetWidth);
-            const missingCards = cardsInRow - (cards.length % cardsInRow);
-        
-            // Remove existing placeholder cards
-            const existingPlaceholders = gridContainer.getElementsByClassName('placeholder');
-            for (const placeholder of existingPlaceholders) {
-                gridContainer.removeChild(placeholder);
-            }
-        
-            // Add new placeholder cards
-            const cardsInLastRow = cards.length % cardsInRow;
-            for (let i = 0; i < (cardsInRow - cardsInLastRow) % cardsInRow; i++) {
-                gridContainer.appendChild(placeholderCard.cloneNode(true));
-            }
-        }
-    
-        // Update placeholder cards on load and window resize
-        updatePlaceholderCards();
-        window.addEventListener('resize', updatePlaceholderCards);
+        const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        //direction: 'vertical',
+        loop: true,
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+        },
+
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        });
     </script>
 </body>
 </html>

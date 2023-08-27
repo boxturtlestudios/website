@@ -4,7 +4,7 @@ header.hero {
     color: var(--primary--white);
     height: calc(100vh - 64px);
     min-height: 516px;
-    background-image: radial-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5)), linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../Assets/mycelia.png");
+    background-image: radial-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5)), linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../Assets/Games/Mycelia/growing.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -31,6 +31,20 @@ header.hero {
 .featured .tag
 {
     margin-bottom: 8px;
+}
+
+/* Slider */
+
+.swiper-slide div {
+    width: 100%;
+}
+
+.swiper .swiper-button-next, .swiper .swiper-button-prev {
+    color: white;
+}
+
+.swiper .swiper-pagination-bullet-active {
+    background-color: white;
 }
 
 /* News */

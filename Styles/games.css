@@ -36,6 +36,14 @@ section.games-list {
     transform: scale(1.02);
 }
 
+.game-card a::after {
+    all: unset;
+}
+
+.game-card a {
+    all: unset;
+}
+
 .game-card h3 {
     margin-top: 8px;
     font-size: 18px;
