@@ -7,6 +7,16 @@ function navSlide() {
     //Toggle nav
     navLinksWrapper.classList.toggle('nav-active');
     navbar.classList.toggle('nav-active');
+    document.querySelectorAll('.swiper').forEach(element => {
+        if(element.style.visibility == "hidden")
+        {
+            element.style.visibility = 'visible';
+        }
+        else
+        {
+            element.style.visibility = "hidden";
+        }
+    });
 
     //Animate links
     navLinks.forEach((link, index) => {
