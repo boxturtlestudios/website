@@ -20,13 +20,13 @@
     <meta property="og:image" content="/Assets/coverImage.png">
 
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="Styles/news.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,0" />
 
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
     <link rel="icon" type="image/png" href="/assets/favicon.png">
 
-    <title>Box Turtle Studios</title>
+    <title>Box Turtle Studios | News</title>
 </head>
 <body>
     <nav class="navbar">
@@ -51,30 +51,13 @@
             <div class="line3"></div>
         </div>
     </nav>
-    <header class="hero">
-        <div class="featured">
-            <h4 class="tag">In Development</h4>
-            <img src="Assets/myceliaTitle.png" alt="Mycelia" class="title" id="mycelia">
-            <p class="details">
-                A farming game set on the island of Mycelia. Explore the island and uncover the secrets of agriculture. Cultivate the unique environment and expand your farm to the undiscovered parts of the island. Sell your crops and goods at the seaside market to make a profit.
-            </p>
-            <a href="games/mycelia.html" class="primary-cta">Learn More</a>
-        </div>
-        <!--Featured Slideshow Controls-->
+    <header>
+        <h2>News</h2>
     </header>
     <main>
         <section class="news">
-            <h2>News</h2>
             <div class="card-wrapper">
                 <!-- News cards will be dynamically generated here -->
-            </div>
-            <a href="news.html" class="secondary-cta-green">View All</a>
-        </section>
-        <section class="about">
-            <div class="info">
-                <h2>About Us</h2>
-                <p>Box Turtle Studios is an indie game development studio committed to crafting enjoyable, captivating, and immersive gaming experiences for players of all ages. Our game line-up encompasses a variety of genres, ranging from platformers and adventures to RPGs and puzzle games.</p>
-                <a href="/about.html" class="primary-cta">Learn More</a>
             </div>
         </section>
     </main>
@@ -122,61 +105,5 @@
         <hr>
         <p class="copyright" id="copyright">©2023 Box Turtle Studios,  All Rights Reserved.</p>
     </footer>
-    <script src="Scripts/navigation.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            fetch('news.json')
-                .then(response => response.json())
-                .then(newsData => {
-                    const cardWrapper = document.querySelector(".card-wrapper");
-
-                    for (let i = 0; i < Math.min(3, newsData.length); i++) {
-                        const news = newsData[i];
-                        const card = document.createElement("div");
-                        card.className = "card";
-
-                        const imageDiv = document.createElement("div");
-                        imageDiv.className = "image";
-                        imageDiv.style.backgroundImage = `url(${news.image})`;
-                        card.appendChild(imageDiv);
-
-                        const detailsDiv = document.createElement("div");
-                        detailsDiv.className = "details";
-
-                        const dateP = document.createElement("p");
-                        dateP.className = "date";
-                        dateP.textContent = news.date;
-                        detailsDiv.appendChild(dateP);
-
-                        const headingH3 = document.createElement("h3");
-                        headingH3.className = "heading";
-                        headingH3.textContent = news.title;
-                        detailsDiv.appendChild(headingH3);
-
-                        const descriptionP = document.createElement("p");
-                        descriptionP.className = "description";
-                        descriptionP.textContent = news.description;
-                        detailsDiv.appendChild(descriptionP);
-
-                        const linkA = document.createElement("a");
-                        linkA.href = news.link.url;
-                        linkA.target = "_blank";
-                        linkA.className = "link";
-                        linkA.textContent = news.link.text;
-
-                        const arrowSpan = document.createElement("span");
-                        arrowSpan.className = "material-symbols-outlined";
-                        arrowSpan.textContent = "arrow_forward";
-                        linkA.appendChild(arrowSpan);
-
-                        detailsDiv.appendChild(linkA);
-                        card.appendChild(detailsDiv);
-
-                        cardWrapper.appendChild(card);
-                    }
-                })
-                .catch(error => console.error('Error loading news data:', error));
-        });
-    </script>
+    <script src="Scripts/load-news.js"></script>
 </body>
-</html>

@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Mycelia Devlog #0 Released",
+        "description": "The first devlog for Mycelia has been released on YouTube.",
+        "date": "Apr 13, 2023",
+        "image": "/Assets/mycelia-devlog1-thumbnail.png",
+        "link": {
+            "url": "https://www.youtube.com/watch?v=7WZKo1yVz9Q&t=95s",
+            "text": "Watch Now"
+        }
+    },
+    {
+        "title": "Box Turtle Studios Official Discord",
+        "description": "The official Discord Server for Box Turtle Studios is open.",
+        "date": "Apr 8, 2023",
+        "image": "/Assets/discord-banner.png",
+        "link": {
+            "url": "https://discord.gg/nztYGYasMB",
+            "text": "Join Server"
+        }
+    }
+]

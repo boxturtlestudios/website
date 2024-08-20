@@ -58,6 +58,10 @@ section.news h2 {
     margin-bottom: 48px;
 }
 
+section.news a.secondary-cta-green {
+    margin-top: 48px;
+}
+
 .card-wrapper {
     display: flex;
     flex-direction: row;
@@ -89,13 +93,13 @@ section.news h2 {
     background-position: center;
 }
 
-.card:nth-child(1) .image {
+/* .card:nth-child(1) .image {
     background-image: url("../Assets/mycelia-devlog1-thumbnail.png");
 }
 
 .card:nth-child(2) .image {
     background-image: url("../Assets/discord-banner.png");
-}
+} */
 
 .card .details {
     width: 80%;
